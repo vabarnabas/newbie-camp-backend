@@ -6,4 +6,4 @@ import { TicketsController } from './tickets.controller';
   imports: [PrismaModule],
   controllers: [TicketsController],
 })
-export class UsersModule {}
+export class TicketsModule {}
