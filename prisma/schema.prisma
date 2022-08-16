@@ -16,5 +16,6 @@ model Ticket {
   displayName String
   description String
   price       Int
+  groupName   String
   isActive    Boolean
 }
