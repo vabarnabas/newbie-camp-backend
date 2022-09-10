@@ -11,11 +11,23 @@ datasource db {
 }
 
 model Ticket {
-  id          String  @id @default(uuid())
-  stripeId    String  @unique
+  id          String   @id @default(uuid())
+  stripeId    String   @unique
   displayName String
   description String
   price       Int
   groupName   String
   isActive    Boolean
+  answer      Answer[]
+}
+
+model Answer {
+  id         String   @id @default(uuid())
+  userName   String
+  formValues String
+  sessionId  String
+  isActive   Boolean
+  createdAt  DateTime
+  ticket     Ticket   @relation(fields: [ticketId], references: [id])
+  ticketId   String
 }
