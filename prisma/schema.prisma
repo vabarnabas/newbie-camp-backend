@@ -30,5 +30,5 @@ model Answer {
   isActive   Boolean
   createdAt  DateTime
   ticket     Ticket?  @relation(fields: [ticketId], references: [id])
-  ticketId   String
+  ticketId   String?
 }
