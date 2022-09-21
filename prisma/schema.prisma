@@ -20,8 +20,6 @@ model Ticket {
   groupIndex  Int
   isActive    Boolean
   answer      Answer[]
-  enablers    String[]
-  disablers   String[]
 }
 
 model Answer {
@@ -31,6 +29,6 @@ model Answer {
   sessionId  String
   isActive   Boolean
   createdAt  DateTime
-  ticket     Ticket   @relation(fields: [ticketId], references: [id])
+  ticket     Ticket?  @relation(fields: [ticketId], references: [id])
   ticketId   String
 }
